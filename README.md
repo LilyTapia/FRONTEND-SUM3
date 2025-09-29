@@ -24,31 +24,6 @@
 - HTML5, CSS3, JavaScript (ES2023)  
 - [gh-pages](https://www.npmjs.com/package/gh-pages) para despliegue
 
----
-
-## Capturas de pantalla
-
-### Catálogo de Productos  
-Vista principal con categorías y productos destacados.
-
-![Catálogo](./src/assets/screenshot-catalogo.png)
-
----
-
-### Carrito de Compras  
-Permite actualizar cantidades, vaciar y finalizar pedido.
-
-![Carrito](./src/assets/screenshot-carrito.png)
-
----
-
-### Vista Responsive (iPhone SE)  
-Diseño adaptable a pantallas pequeñas.
-
-![Responsive](./src/assets/screenshot-mobile.png)
-
----
-
 ## Instalación y ejecución local
 
 Para clonar y correr este proyecto en tu computador:
