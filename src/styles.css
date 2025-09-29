@@ -1,0 +1,131 @@
+:root{
+  --bg:#fff7f5;
+  --card:#ffffff;
+  --text:#2b2b2b;
+  --muted:#666;
+  --brand:#ff8ab5;      /* rosado pastel */
+  --brand-2:#ffd166;    /* amarillo crema */
+  --radius:16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+*{ box-sizing: border-box; }
+html,body,#root{ height:100%; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Contenedor y layout base */
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px; /* +aire lateral y vertical */
+}
+main{
+  padding-top: 12px;     /* separación bajo la navbar */
+  padding-bottom: 56px;  /* aire al final */
+}
+
+/* Tarjetas y grillas */
+.card{
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+.grid{ display:grid; gap:20px; }
+@media(min-width: 768px){
+  .grid.products{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+
+/* Tipografía y utilidades */
+.row{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.price{ font-weight:800; }
+.price del{ color: var(--muted); margin-left: 8px; font-weight: 400; }
+.muted{ color: var(--muted); }
+
+/* Botones */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  border:0; border-radius: 999px; background: var(--brand); color:#56112a; font-weight: 800;
+  padding: 10px 16px; cursor:pointer;
+}
+.btn.secondary{ background: var(--brand-2); color:#614300; }
+.btn:disabled{ opacity:.6; cursor:not-allowed; }
+
+/* Badges */
+.badge{
+  display:inline-block; padding:4px 10px; border-radius:999px; background:#ffe0ea; color:#b21756; font-weight:700; font-size:.75rem;
+}
+
+/* Inputs */
+.input-qty{
+  width: 64px; padding: 6px 10px; border-radius: 10px;
+  border: 1px solid #e8d9d9; background: #fff; color: var(--text);
+}
+
+/* Estados vacíos */
+.empty{ text-align:center; padding: 40px 0; color: var(--muted); }
+
+/* ===== NAVBAR (nueva) ===== */
+.navbar{
+  position: sticky; top:0; z-index: 50;
+  background-color: #fff7f7;
+  padding: 0.8rem 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+.navbar-content{
+  display:flex; justify-content:space-between; align-items:center;
+  max-width: 1200px; margin: 0 auto; padding: 0 1rem;
+}
+.brand{ display:flex; align-items:center; gap: 0.5rem; }
+.brand-logo{ height: 40px; width:auto; }
+.brand-name{
+  font-size: 1.2rem; font-weight: 600; color: #d86a8b;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.cart{ font-size: .95rem; }
+
+/* ===== HERO (logo grande + título + bajada) ===== */
+.hero{
+  text-align: center;
+  margin-top: 24px;        /* aire sobre el logo */
+  margin-bottom: 20px;     /* aire antes de pestañas */
+}
+.hero-logo{
+  width: min(60%, 260px);
+  height: auto;
+  display:block;
+  margin: 0 auto 12px;     /* separa logo del título */
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,.18));
+}
+.hero h1{
+  margin: 16px 0 8px;
+  font-size: clamp(28px, 4vw, 36px);
+  text-align: center;
+}
+.subtitle{
+  margin: 0 auto 16px; max-width: 720px; color: var(--muted); line-height: 1.35;
+}
+
+/* ===== Pestañas (categorías) ===== */
+.tabs{
+  display:flex; flex-wrap: wrap; justify-content:center; gap:10px;
+  margin-top: 12px; margin-bottom: 32px;
+}
+.tab{
+  padding: 8px 14px; border-radius: 999px; background:#ffeef6; color:#8a1242; cursor:pointer; border:1px solid transparent;
+}
+.tab.active{ background:#ffffff; border-color:#ffd4e7; }
+
+/* Títulos de sección (si usas <h2>) */
+h2{
+  text-align: center;
+  margin-top: 28px;
+  margin-bottom: 18px;
+}
