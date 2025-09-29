@@ -17,7 +17,7 @@ export default function Cart({ items, onAdd, onRemove, onSetQty, total }) {
 
   // ✅ Simular checkout
   function handleCheckout() {
-    alert("🎉 ¡Gracias por tu compra en Delicias Petra!\nTu pedido ha sido registrado.");
+    alert("¡Gracias por tu compra en Delicias Petra!\nTu pedido ha sido registrado.");
   }
 
   return (
@@ -27,7 +27,7 @@ export default function Cart({ items, onAdd, onRemove, onSetQty, total }) {
       <div className="grid" style={{ gridTemplateColumns: "1fr", gap: 12 }}>
         {items.map((it) => (
           <article key={it.id} className="card">
-            {/* ⬇️ Fila principal ahora tiene 'cart-row' para responsive */}
+            {/* Fila principal ahora tiene 'cart-row' para responsive */}
             <div className="row cart-row">
               <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
                 <img
@@ -45,7 +45,7 @@ export default function Cart({ items, onAdd, onRemove, onSetQty, total }) {
                 </div>
               </div>
 
-              {/* ⬇️ Controles con clase 'cart-controls' para romper/apilar en móvil */}
+              {/* Controles con clase 'cart-controls' para romper/apilar en móvil */}
               <div className="row cart-controls">
                 <label
                   className="muted"

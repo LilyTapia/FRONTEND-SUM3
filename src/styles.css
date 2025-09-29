@@ -173,7 +173,7 @@ h2{
 
   /* Cart: apilar controles y evitar desbordes */
   .cart-controls{
-    flex-wrap: wrap;              /* 👉 apila input y botones si no caben */
+    flex-wrap: wrap;              /* apila input y botones si no caben */
     gap: 8px;
     justify-content: flex-end;    /* controles a la derecha */
   }
