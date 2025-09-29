@@ -129,3 +129,116 @@ h2{
   margin-top: 28px;
   margin-bottom: 18px;
 }
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablets: 2 columnas de productos */
+@media (max-width: 1024px){
+  .grid.products{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Móviles: 1 columna y controles apilados */
+@media (max-width: 640px){
+  :root{
+    --radius:14px;
+  }
+
+  body{ overflow-x: hidden; }
+
+  .container{
+    padding: 16px 12px;
+  }
+
+  .grid.products{
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card{ padding: 16px; }
+
+  /* Navbar más compacta */
+  .brand-logo{ height: 32px; }
+  .brand-name{ font-size: 1rem; }
+
+  /* Hero un poco más apretado */
+  .hero{ margin-top: 16px; margin-bottom: 16px; }
+  .hero-logo{ width: min(70%, 220px); margin-bottom: 10px; }
+  .hero h1{ font-size: clamp(24px, 6vw, 30px); margin: 12px 0 6px; }
+  .subtitle{ margin-bottom: 12px; }
+
+  /* Pestañas */
+  .tabs{ gap: 8px; margin-bottom: 24px; }
+
+  /* Cart: apilar controles y evitar desbordes */
+  .cart-controls{
+    flex-wrap: wrap;              /* 👉 apila input y botones si no caben */
+    gap: 8px;
+    justify-content: flex-end;    /* controles a la derecha */
+  }
+  .input-qty{
+    width: 56px;                  /* más angosto en móvil */
+    padding: 6px 8px;
+  }
+  .btn{
+    padding: 8px 14px;
+  }
+
+  /* Evitar imágenes que generen scroll horizontal */
+  img{ max-width: 100%; height: auto; }
+}
+
+/* ===== Extra-compacto: iPhone SE / ≤360px ===== */
+@media (max-width: 360px){
+  /* Layout general */
+  .container{ padding: 12px 10px; }
+  .card{ padding: 12px; }
+  .grid.products{ grid-template-columns: 1fr; gap: 14px; }
+
+  /* Navbar compacta */
+  .brand-logo{ height: 28px; }
+  .brand-name{ display: none; } /* ahorra espacio en la barra */
+
+  /* Hero compact */
+  .hero{ margin-top: 10px; margin-bottom: 12px; }
+  .hero-logo{ width: min(78%, 200px); margin-bottom: 8px; }
+  .hero h1{ font-size: 22px; margin: 10px 0 6px; }
+  .subtitle{ margin-bottom: 10px; font-size: 0.95rem; }
+
+  /* Pestañas */
+  .tabs{ gap: 6px; margin-bottom: 16px; }
+  .tab{ padding: 6px 10px; font-size: 0.9rem; }
+
+  /* Carrito: rompe filas y comprime controles */
+  .cart-row{
+    flex-direction: column;        /* imagen+texto arriba, controles abajo */
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .cart-row img{
+    width: 60px; height: 45px;     /* foto más pequeña */
+  }
+
+  .cart-controls{
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+    justify-content: space-between; /* input a la izquierda, botones a la derecha */
+  }
+
+  .input-qty{
+    width: 46px; padding: 5px 6px; font-size: 0.95rem;
+  }
+
+  .btn{ padding: 7px 12px; font-weight: 700; }
+  .btn.secondary{ padding: 7px 12px; }
+
+  /* Tipografía de subtotales/total un pelín más pequeña */
+  .price{ font-size: 1.05rem; }
+  .muted{ font-size: 0.95rem; }
+
+  /* Evitar scroll horizontal */
+  img{ max-width: 100%; height: auto; }
+  body{ overflow-x: hidden; }
+}

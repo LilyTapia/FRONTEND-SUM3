@@ -31,8 +31,18 @@ export default function App() {
   }
 
   function setQuantity(productId, qty) {
-    setCart(prev => prev.map(it => it.id === productId ? { ...it, quantity: qty } : it));
+    setCart(prev => {
+      // si la cantidad es inválida o <= 0, eliminamos el producto del carrito
+      if (!Number.isFinite(qty) || qty <= 0) {
+        return prev.filter(it => it.id !== productId);
+      }
+      // si es válida y >= 1, solo actualizamos la cantidad
+      return prev.map(it =>
+        it.id === productId ? { ...it, quantity: qty } : it
+      );
+    });
   }
+
 
   const filtered = useMemo(() => {
     if (activeCat === "Todas") return products;
