@@ -2,7 +2,7 @@
 
 Sumativa N°3 – Semana 8 de **Frontend I (DUOC)**. Este caso práctico consolida el uso de **React + Vite** para construir un eCommerce de pastelería que maneja estados, efectos secundarios y renderizado condicional, cumpliendo la pauta solicitada por la cátedra.
 
-**Sitio desplegado:** https://lilytapia.github.io/FRONTEND-SEM7/
+**Sitio desplegado:** https://lilytapia.github.io/FRONTEND-SUM3/
 
 ---
 
@@ -70,8 +70,8 @@ src/
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/LilyTapia/FRONTEND-SEM7.git
-cd FRONTEND-SEM7
+git clone https://github.com/LilyTapia/FRONTEND-SUM3.git
+cd FRONTEND-SUM3
 
 # Instalar dependencias
 npm install
@@ -107,7 +107,7 @@ npm run deploy
 | Manejo de efectos con `useEffect` | `src/App.jsx` simula fetch asincrónico vía `fetchProducts` |
 | Renderizado condicional | `ProductList.jsx`, `ProductCard.jsx`, `Cart.jsx` muestran mensajes/estilos según estado |
 | Buenas prácticas | Estructura modular, utilidades (`utils/`), comentarios breves y estilos centralizados |
-| Publicación | URL activa en GitHub Pages: https://lilytapia.github.io/FRONTEND-SEM7/ |
+| Publicación | URL activa en GitHub Pages: https://lilytapia.github.io/FRONTEND-SUM3/ |
 
 ---
 
