@@ -55,6 +55,9 @@ main{
 }
 .btn.secondary{ background: var(--brand-2); color:#614300; }
 .btn:disabled{ opacity:.6; cursor:not-allowed; }
+.btn.btn-in-cart{ background:#dff5e5; color:#215637; border:1px solid #b4e4c4; }
+.btn.btn-in-cart:disabled{ opacity:1; cursor:default; }
+
 
 /* Badges */
 .badge{
@@ -111,6 +114,51 @@ main{
 }
 .subtitle{
   margin: 0 auto 16px; max-width: 720px; color: var(--muted); line-height: 1.35;
+}
+
+/* ===== Product Card ===== */
+.product-card-image{
+  border-radius: 12px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+.product-card-header{
+  align-items: flex-start;
+}
+.product-card-title{
+  margin: 0;
+}
+.product-card-description,
+.product-card-price{
+  margin-top: 8px;
+}
+
+/* ===== Cart ===== */
+.grid.cart-items{
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.cart-item-info{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.cart-item-image{
+  border-radius: 8px;
+  object-fit: cover;
+}
+.cart-label{
+  margin-right: 6px;
+}
+.cart-subtotal{
+  margin-top: 10px;
+}
+.cart-summary{
+  margin-top: 16px;
+}
+.cart-actions{
+  margin-top: 16px;
 }
 
 /* ===== Pestañas (categorías) ===== */

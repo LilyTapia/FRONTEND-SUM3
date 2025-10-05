@@ -1,3 +1,5 @@
+import { formatCurrency } from "../utils/format";
+
 export default function Cart({ items, onAdd, onRemove, onSetQty, total }) {
   // 📝 Carrito vacío
   if (items.length === 0) {
@@ -24,23 +26,23 @@ export default function Cart({ items, onAdd, onRemove, onSetQty, total }) {
     <section className="container">
       <h2>Carrito</h2>
 
-      <div className="grid" style={{ gridTemplateColumns: "1fr", gap: 12 }}>
+      <div className="grid cart-items">
         {items.map((it) => (
           <article key={it.id} className="card">
             {/* Fila principal ahora tiene 'cart-row' para responsive */}
             <div className="row cart-row">
-              <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+              <div className="cart-item-info">
                 <img
                   src={it.image}
                   alt={`Foto de ${it.name}`}
                   width="72"
                   height="54"
-                  style={{ borderRadius: 8, objectFit: "cover" }}
+                  className="cart-item-image"
                 />
                 <div>
                   <strong>{it.name}</strong>
                   <div className="muted">
-                    ${it.offerPrice.toLocaleString("es-CL")} c/u
+                    {formatCurrency(it.offerPrice)} c/u
                   </div>
                 </div>
               </div>
@@ -48,8 +50,7 @@ export default function Cart({ items, onAdd, onRemove, onSetQty, total }) {
               {/* Controles con clase 'cart-controls' para romper/apilar en móvil */}
               <div className="row cart-controls">
                 <label
-                  className="muted"
-                  style={{ marginRight: 6 }}
+                  className="muted cart-label"
                   htmlFor={`qty-${it.id}`}
                 >
                   Cant.
@@ -91,10 +92,10 @@ export default function Cart({ items, onAdd, onRemove, onSetQty, total }) {
               </div>
             </div>
 
-            <div className="row" style={{ marginTop: 10 }}>
+            <div className="row cart-subtotal">
               <span className="muted">Subtotal</span>
               <strong>
-                ${(it.offerPrice * it.quantity).toLocaleString("es-CL")}
+                {formatCurrency(it.offerPrice * it.quantity)}
               </strong>
             </div>
           </article>
@@ -102,14 +103,14 @@ export default function Cart({ items, onAdd, onRemove, onSetQty, total }) {
       </div>
 
       {/* Total + acciones */}
-      <div className="card" style={{ marginTop: 16 }}>
+      <div className="card cart-summary">
         <div className="row" aria-live="polite" aria-atomic="true">
           <span className="muted">Total</span>
-          <strong className="price">${total.toLocaleString("es-CL")}</strong>
+          <strong className="price">{formatCurrency(total)}</strong>
         </div>
       </div>
 
-      <div className="row" style={{ marginTop: 16, justifyContent: "space-between" }}>
+      <div className="row cart-actions">
         <button className="btn secondary" onClick={handleClearCart}>
           🧹 Vaciar carrito
         </button>

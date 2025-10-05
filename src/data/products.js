@@ -95,7 +95,6 @@ const products = [
       description: "Huevitos de chocolate de 270 gr (14cm), con minichubis, sorpresa, rolls y marshmallow.",
       image:pascua }
   ];
-  
-  export const categories = ["Todas", "Galletas glaseadas", "Tortas", "Propuestas festivos"];
+
   export default products;
   
